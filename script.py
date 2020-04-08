@@ -7,6 +7,7 @@ import pymysql
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
+logging.info("Running...")
 
 db_config = json.loads(os.environ['RDS_CONFIG'])
 
@@ -18,3 +19,5 @@ except pymysql.MySQLError as e:
     sys.exit()
 
 logger.info("SUCCESS: Connection to RDS MySQL instance succeeded.")
+
+logger.info("Exisitng.")
