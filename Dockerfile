@@ -1,5 +1,9 @@
-FROM python:3.8
+FROM python:3.8-alpine
 
-ADD script.py /
- 
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
+
+COPY src/ /app
+WORKDIR /app
+
 CMD [ "python", "./script.py" ]
